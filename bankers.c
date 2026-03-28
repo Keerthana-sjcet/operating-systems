@@ -38,12 +38,12 @@ int main(){
     int finish[10] = {0};
     int safe[10];
     int count = 0;
-    while(count < np){
-        int found = 0;
+    while(count < np){                 // while no of processes completed <no of processes 
+        int found = 0;                //  becomes  1 is appropiriaet process is found
         for(int i=0;i<np;i++){
             if(finish[i]==0){
-                int ok = 1;
-                for(int j=0;j<nr;j++){
+                int ok = 1;            //ok to be executed
+                for(int j=0;j<nr;j++){   //
                     if(need[i][j] > avail[j]){
                         ok = 0;
                         break;
@@ -51,7 +51,7 @@ int main(){
                 }
                 if(ok==1){
                     for(int j=0;j<nr;j++){
-                        avail[j] += alloc[i][j];
+                        avail[j] += alloc[i][j];         //
                     }
                     safe[count] = i;
                     count++;
